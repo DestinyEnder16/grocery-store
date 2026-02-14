@@ -1,50 +1,32 @@
-# Welcome to your Expo app 👋
+# Creating a Landing Page / Screen
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Create a mobile application using designs created with Figma.
 
-## Get started
+## Technologies Used
 
-1. Install dependencies
+- Expo (React Native)
+- Figma
+- Google Fonts
 
-   ```bash
-   npm install
-   ```
+## Problems I Encountered
 
-2. Start the app
+- When using Expo Go, the splash screen behaves differently on emulators and on the physical devices.
+- The status bar on my physical device was barely visible due to the color similarities.
+- Implementing the 'carousel' feature using the ScrollView component
+- Styling
+- Building my ap
 
-   ```bash
-   npx expo start
-   ```
+## Things To Note
 
-In the output, you'll find options to open the app in a
+1. The Poppins font was used in the Figma design so I needed to install the font (from Google Fonts) and place them in my font folder.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+2. To ensure that my app waits until the fonts are downloaded before displaying the UI, I kept the splash screen visible until loading was complete.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+3. Expo does not handle the rendering of SVG files, to tackle that issue I used the following packages
 
-## Get a fresh project
+- react-native-svg
+- react-native-svg-transformer
 
-When you're ready, run:
+4. A development build has already been created using Expo.
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. To ensure smooth and accurate scrolls, I used the width of the phone to determine the width of my component.
