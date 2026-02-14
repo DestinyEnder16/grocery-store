@@ -14,7 +14,7 @@ Create a mobile application using designs created with Figma.
 - The status bar on my physical device was barely visible due to the color similarities.
 - Implementing the 'carousel' feature using the ScrollView component
 - Styling
-- Building my ap
+- Building my app
 
 ## Things To Note
 
