@@ -16,9 +16,9 @@ export default function ProgressBar({
     <View
       style={{
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginHorizontal: 8,
-        gap: 5,
+        // justifyContent: 'space-around',
+        paddingHorizontal: 20,
+        gap: 8,
       }}
     >
       {Array.from({ length: numBars }).map((_, index) => (

@@ -7,7 +7,6 @@ interface btnProps {
 }
 
 export default function BtnNav({ activeIndex, lastIndex, fn }: btnProps) {
-  console.log(activeIndex, lastIndex);
   return (
     <View style={styles.container}>
       {activeIndex !== lastIndex ? (
