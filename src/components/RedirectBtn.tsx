@@ -1,6 +1,8 @@
+import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text } from 'react-native';
 
 export default function RedirectBtn() {
+  const router = useRouter();
   return (
     <Pressable
       style={[
@@ -10,6 +12,7 @@ export default function RedirectBtn() {
           flex: 1,
         },
       ]}
+      onPress={() => router.navigate('/login')}
     >
       <Text
         style={[
