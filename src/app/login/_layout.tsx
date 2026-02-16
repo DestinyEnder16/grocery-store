@@ -1,5 +1,10 @@
+import { InfoProvider } from '@/src/context/InfoContext';
 import { Stack } from 'expo-router';
 
 export default function Layout() {
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <InfoProvider>
+      <Stack screenOptions={{ headerShown: false }} />
+    </InfoProvider>
+  );
 }

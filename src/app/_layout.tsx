@@ -2,8 +2,10 @@ import { Stack } from 'expo-router';
 // NOTE: this is where the Global providers can be configured.
 
 import { useFonts } from '@expo-google-fonts/inter';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+
 // 1. Prevent the splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
 
@@ -14,6 +16,7 @@ export default function RootLayout() {
     'Poppins-Font': require('../../assets/fonts/Poppins.ttf'),
     'Poppins-Font-Bold': require('../../assets/fonts/Poppins-Bold.ttf'),
     'Poppins-Font-Semibold': require('../../assets/fonts/Poppins-SemiBold.ttf'),
+    ...Ionicons.font,
   });
 
   // SOLUTION: Using a splash screen
