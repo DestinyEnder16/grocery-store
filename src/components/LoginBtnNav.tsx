@@ -3,18 +3,25 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 interface btnProps {
   text: string;
   fn?: () => void;
+  backgroundColor?: string;
+  color?: string;
 }
 
-export default function LoginBtnNav({ text, fn }: btnProps) {
+export default function LoginBtnNav({
+  text,
+  backgroundColor,
+  color,
+  fn,
+}: btnProps) {
   return (
     <View style={styles.container}>
       <Pressable
         onPress={() => {
           fn && fn();
         }}
-        style={styles.btn}
+        style={[styles.btn, backgroundColor && { backgroundColor }]}
       >
-        <Text style={styles.txt}>{text}</Text>
+        <Text style={[styles.txt, color && { color }]}>{text}</Text>
       </Pressable>
     </View>
   );
@@ -32,7 +39,7 @@ const styles = StyleSheet.create({
   },
   txt: {
     color: '#fff',
-    fontFamily: 'Poppins-Font',
+    fontFamily: 'Poppins-Font-Semibold',
     textAlign: 'center',
   },
 });

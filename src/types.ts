@@ -350,3 +350,13 @@ export const categories = [
   'Processed Food',
   'Show +22 More',
 ];
+
+export const containerStyle = {
+  paddingHorizontal: 16,
+  paddingVertical: 16,
+  justifyContent: 'space-between',
+  height: '100%',
+  backgroundColor: '#fff',
+};
+
+export const Location = '../assets/icons/location-illustration.svg';
