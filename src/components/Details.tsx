@@ -1,6 +1,5 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 interface detailsProp {
   heading: string;
@@ -17,10 +16,6 @@ export default function Details({
 }: detailsProp) {
   return (
     <View>
-      <Pressable style={styles.icon}>
-        <Ionicons name="help" size={20} color={'#aaa'} />
-      </Pressable>
-
       <View>
         <Text style={styles.heading}>{heading}</Text>
         <Text style={styles.txt}>{text}</Text>
@@ -37,13 +32,7 @@ export default function Details({
   );
 }
 
-const styles = StyleSheet.create({
-  icon: {
-    alignSelf: 'flex-end',
-    backgroundColor: '#ddddddac',
-    borderRadius: 100,
-    padding: 2,
-  },
+export const styles = StyleSheet.create({
   heading: {
     fontFamily: 'Poppins-Font-Semibold',
     fontSize: 20,

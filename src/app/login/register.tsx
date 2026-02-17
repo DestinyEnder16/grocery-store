@@ -1,7 +1,9 @@
 import Details from '@/src/components/Details';
 import LoginBtnNav from '@/src/components/LoginBtnNav';
+import Nav from '@/src/components/NavHelp';
 import NumInputField from '@/src/components/NumInputField';
 import { useInfo } from '@/src/context/InfoContext';
+import { useRouter } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { formatPhoneNumberIntl } from 'react-phone-number-input';
@@ -11,13 +13,13 @@ export default function Register() {
 
   // formatPhoneNumberIntl('+12133734253') === '+1 213 373 4253';
   const phoneNum = formatPhoneNumberIntl(number);
-
-  const Num = <Text>{phoneNum}</Text>;
+  const router = useRouter();
 
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <View>
+          <Nav shouldGoBack={true} />
           <Details
             heading="Enter your OTP number"
             text={
@@ -52,7 +54,10 @@ export default function Register() {
         </View>
 
         <View style={{ gap: 10 }}>
-          <LoginBtnNav text="Continue" />
+          <LoginBtnNav
+            text="Continue"
+            fn={() => router.navigate('/login/select_category')}
+          />
           <Text
             style={{
               fontFamily: 'Poppins-Font',

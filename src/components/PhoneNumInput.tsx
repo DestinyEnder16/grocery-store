@@ -35,7 +35,8 @@ export default function PhoneNumberInput() {
           country={country.code}
           onChange={setNumber}
           placeholder="Phone Number"
-          placeholderTextColor="#0D0D0D"
+          placeholderTextColor="#6e6b6b"
+          required
         />
       </View>
     </View>
