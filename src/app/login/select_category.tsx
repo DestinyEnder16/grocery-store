@@ -1,37 +1,31 @@
+import CategoryTab from '@/src/components/CategoryTab';
 import Details from '@/src/components/Details';
 import LoginBtnNav from '@/src/components/LoginBtnNav';
 import Nav from '@/src/components/NavHelp';
-import PhoneNumberInput from '@/src/components/PhoneNumInput';
-import { useInfo } from '@/src/context/InfoContext';
 import { useRouter } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-export default function Index() {
+export default function Select_Category() {
   const router = useRouter();
-  const { number } = useInfo();
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <View>
-          <Nav />
+          <Nav shouldGoBack={true} />
 
           <Details
-            heading="Get started"
-            text="You can login or make an account if you're new"
-            extra_txt="Enter your phone number"
+            heading="All your grocery need in one place"
+            text="Select your desired shop category"
           >
-            <PhoneNumberInput />
+            <CategoryTab />
           </Details>
         </View>
 
         <LoginBtnNav
           text="Continue"
-          fn={() => {
-            number && router.navigate('/login/register');
-          }}
+          fn={() => router.navigate('/login/location')}
         />
-        {/* <RedirectBtn /> */}
       </SafeAreaView>
     </SafeAreaProvider>
   );

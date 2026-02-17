@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import RedirectBtn from './RedirectBtn';
 
 interface btnProps {
   activeIndex: number;
@@ -36,26 +37,7 @@ export default function BtnNav({ activeIndex, lastIndex, fn }: btnProps) {
           </Pressable>
         </>
       ) : (
-        <Pressable
-          style={[
-            styles.btn,
-            {
-              backgroundColor: '#000',
-              flex: 1,
-            },
-          ]}
-        >
-          <Text
-            style={[
-              styles.txt,
-              {
-                color: '#fff',
-              },
-            ]}
-          >
-            Get Started
-          </Text>
-        </Pressable>
+        <RedirectBtn />
       )}
     </View>
   );
