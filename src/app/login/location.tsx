@@ -4,8 +4,9 @@ import Nav from '@/src/components/NavHelp';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
+import { LocationSvg } from '@/src/types';
 import { useRouter } from 'expo-router';
-import Location from '../../../assets/icons/location-illustration.svg';
+// import Location from '../../../assets/icons/location-illustration.svg';
 
 export default function LocationScreen() {
   const router = useRouter();
@@ -22,7 +23,7 @@ export default function LocationScreen() {
             gap: 40,
           }}
         >
-          <LoginInfoField Img={<Location />} />
+          <LoginInfoField Img={<LocationSvg />} />
 
           <View style={{ alignItems: 'center' }}>
             <Text style={styles.headline}>Set your location</Text>

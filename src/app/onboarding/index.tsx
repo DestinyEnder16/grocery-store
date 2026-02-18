@@ -5,10 +5,11 @@ import ProgressBar from '../../components/ProgressBar';
 
 // IMPORTANT SVG IMPORTS
 import { useRef, useState } from 'react';
-import Box from '../../../assets/icons/big_box.svg';
-import Register from '../../../assets/icons/cash_register.svg';
-import Truck from '../../../assets/icons/delivery_truck.svg';
-import Trolley from '../../../assets/icons/full_trolley.svg';
+// import Box from '../../../assets/icons/big_box.svg';
+// import Register from '../../../assets/icons/cash_register.svg';
+// import Truck from '../../../assets/icons/delivery_truck.svg';
+// import Trolley from '../../../assets/icons/full_trolley.svg';
+import { BoxSvg, RegisterSvg, TrolleySvg, TruckSvg } from '@/src/types';
 import Screen from '../../components/Screen';
 
 const styles = StyleSheet.create({
@@ -22,23 +23,23 @@ export default function Index() {
       index: 0,
       headline: 'Welcome to Grocerya',
       text: 'Get your grocery needs at your service within a minute. Fast, efficient, and convenient',
-      Img: <Trolley style={styles.icon} />,
+      Img: <TrolleySvg style={styles.icon} />,
     },
     {
       index: 1,
       headline: 'Get any packages delivered',
       text: 'Get all your items conveniently, ensuring everything you need arrives without any hassle.',
-      Img: <Truck style={styles.icon} />,
+      Img: <TruckSvg style={styles.icon} />,
     },
     {
       index: 2,
-      Img: <Box style={styles.icon} />,
+      Img: <BoxSvg style={styles.icon} />,
       headline: 'Protected package delivery',
       text: 'Your groceries are carefully packaged to ensure they arrive safely and in perfect condition',
     },
     {
       index: 3,
-      Img: <Register style={styles.icon} />,
+      Img: <RegisterSvg style={styles.icon} />,
       headline: 'Best price guaranteed',
       text: 'Allowing you to stock up on your favorite items while staying withing your budget',
     },

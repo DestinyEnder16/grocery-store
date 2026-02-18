@@ -1,3 +1,12 @@
+import BoxSvg from '@/assets/icons/big_box.svg';
+import RegisterSvg from '@/assets/icons/cash_register.svg';
+import TruckSvg from '@/assets/icons/delivery_truck.svg';
+import TrolleySvg from '@/assets/icons/full_trolley.svg';
+import LocationSvg from '@/assets/icons/location-illustration.svg';
+import NotifSvg from '@/assets/icons/notif_illustration.svg';
+
+export { BoxSvg, LocationSvg, NotifSvg, RegisterSvg, TrolleySvg, TruckSvg };
+
 export const CountryCodeList = [
   'AF',
   'AL',
@@ -358,5 +367,3 @@ export const containerStyle = {
   height: '100%',
   backgroundColor: '#fff',
 };
-
-export const Location = '../assets/icons/location-illustration.svg';
