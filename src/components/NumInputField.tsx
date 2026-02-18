@@ -1,7 +1,17 @@
 import { StyleSheet, TextInput } from 'react-native';
 
 export default function NumInputField() {
-  return <TextInput style={styles.field} maxLength={1} textAlign="center" />;
+  return (
+    <TextInput
+      style={styles.field}
+      maxLength={1}
+      keyboardType="numeric"
+      //
+      // IMPORTANT Hides the numeric values after typing
+      secureTextEntry={true}
+      textAlign="center"
+    />
+  );
 }
 
 const styles = StyleSheet.create({

@@ -23,7 +23,6 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded || error) {
-      // NOTE: You can add a 2-second delay so you can actually see your work!
       SplashScreen.hideAsync();
     }
   }, [loaded, error]);
