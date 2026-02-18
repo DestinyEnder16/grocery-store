@@ -4,7 +4,6 @@ import Nav from '@/src/components/NavHelp';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-// import Notif from '../../../assets/icons/notif_illustration.svg';
 import { NotifSvg } from '@/src/types';
 
 export default function NavigationScreen() {

@@ -1,16 +1,13 @@
+import BtnNav from '@/src/components/BtnNav';
+import ProgressBar from '@/src/components/ProgressBar';
 import { Dimensions, FlatList, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import BtnNav from '../../components/BtnNav';
-import ProgressBar from '../../components/ProgressBar';
+
+import { useRef, useState } from 'react';
 
 // IMPORTANT SVG IMPORTS
-import { useRef, useState } from 'react';
-// import Box from '../../../assets/icons/big_box.svg';
-// import Register from '../../../assets/icons/cash_register.svg';
-// import Truck from '../../../assets/icons/delivery_truck.svg';
-// import Trolley from '../../../assets/icons/full_trolley.svg';
+import Screen from '@/src/components/Screen';
 import { BoxSvg, RegisterSvg, TrolleySvg, TruckSvg } from '@/src/types';
-import Screen from '../../components/Screen';
 
 const styles = StyleSheet.create({
   icon: { marginBottom: 28 },

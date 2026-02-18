@@ -364,6 +364,6 @@ export const containerStyle = {
   paddingHorizontal: 16,
   paddingVertical: 16,
   justifyContent: 'space-between',
-  height: '100%',
+  height: 100,
   backgroundColor: '#fff',
 };

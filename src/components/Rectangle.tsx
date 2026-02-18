@@ -1,5 +1,4 @@
 import { Pressable, StyleSheet } from 'react-native';
-import { Text } from 'react-native-svg';
 
 interface rectangleProps {
   color: string;
@@ -8,9 +7,9 @@ interface rectangleProps {
 
 export default function Rectangle({ color, isActive }: rectangleProps) {
   return (
-    <Pressable style={[styles.rect, isActive && { backgroundColor: color }]}>
-      <Text>HEllo</Text>
-    </Pressable>
+    <Pressable
+      style={[styles.rect, isActive && { backgroundColor: color }]}
+    ></Pressable>
   );
 }
 

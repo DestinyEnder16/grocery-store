@@ -6,7 +6,6 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { LocationSvg } from '@/src/types';
 import { useRouter } from 'expo-router';
-// import Location from '../../../assets/icons/location-illustration.svg';
 
 export default function LocationScreen() {
   const router = useRouter();
