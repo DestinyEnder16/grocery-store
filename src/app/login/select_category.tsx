@@ -5,29 +5,27 @@ import Nav from '@/src/components/NavHelp';
 import { containerStyles } from '@/src/constants/data';
 import { useRouter } from 'expo-router';
 import { View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Select_Category() {
   const router = useRouter();
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={containerStyles.container}>
-        <View>
-          <Nav shouldGoBack={true} />
+    <SafeAreaView style={containerStyles.container}>
+      <View>
+        <Nav shouldGoBack={true} />
 
-          <Details
-            heading="All your grocery need in one place"
-            text="Select your desired shop category"
-          >
-            <CategoryTab />
-          </Details>
-        </View>
+        <Details
+          heading="All your grocery need in one place"
+          text="Select your desired shop category"
+        >
+          <CategoryTab />
+        </Details>
+      </View>
 
-        <LoginBtnNav
-          text="Continue"
-          fn={() => router.navigate('/login/location')}
-        />
-      </SafeAreaView>
-    </SafeAreaProvider>
+      <LoginBtnNav
+        text="Continue"
+        fn={() => router.navigate('/login/location')}
+      />
+    </SafeAreaView>
   );
 }

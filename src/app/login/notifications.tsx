@@ -2,61 +2,59 @@ import LoginBtnNav from '@/src/components/LoginBtnNav';
 import LoginInfoField from '@/src/components/LoginInfoField';
 import Nav from '@/src/components/NavHelp';
 import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { containerStyles } from '@/src/constants/data';
 import { NotifSvg } from '@/src/types';
 
 export default function NavigationScreen() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={containerStyles.container}>
-        <View>
-          <Nav shouldGoBack={true} />
-
-          <View
-            style={{
-              // flex: 1,
-              alignItems: 'flex-start',
-              alignSelf: 'flex-start',
-              gap: 8,
-            }}
-          >
-            <Text style={styles.headline}>
-              Lastly, please enable notifications
-            </Text>
-            <Text style={styles.txt}>
-              Enable your notifications for more updates and important messages
-              about your grocery needs
-            </Text>
-          </View>
-        </View>
+    <SafeAreaView style={containerStyles.container}>
+      <View>
+        <Nav shouldGoBack={true} />
 
         <View
           style={{
-            alignItems: 'center',
             // flex: 1,
-            // justifyContent: 'flex-start',
-            gap: 40,
+            alignItems: 'flex-start',
+            alignSelf: 'flex-start',
+            gap: 8,
           }}
         >
-          <LoginInfoField Img={<NotifSvg />} />
+          <Text style={styles.headline}>
+            Lastly, please enable notifications
+          </Text>
+          <Text style={styles.txt}>
+            Enable your notifications for more updates and important messages
+            about your grocery needs
+          </Text>
         </View>
+      </View>
 
-        <View style={{ gap: 16 }}>
-          <LoginBtnNav
-            backgroundColor="#0D0D0D"
-            text="Enable Notifications"
-            color="white"
-          />
-          <LoginBtnNav
-            backgroundColor="#F8F9FA"
-            text="Skip For Now"
-            color="black"
-          />
-        </View>
-      </SafeAreaView>
-    </SafeAreaProvider>
+      <View
+        style={{
+          alignItems: 'center',
+          // flex: 1,
+          // justifyContent: 'flex-start',
+          gap: 40,
+        }}
+      >
+        <LoginInfoField Img={<NotifSvg />} />
+      </View>
+
+      <View style={{ gap: 16 }}>
+        <LoginBtnNav
+          backgroundColor="#0D0D0D"
+          text="Enable Notifications"
+          color="white"
+        />
+        <LoginBtnNav
+          backgroundColor="#F8F9FA"
+          text="Skip For Now"
+          color="black"
+        />
+      </View>
+    </SafeAreaView>
   );
 }
 
