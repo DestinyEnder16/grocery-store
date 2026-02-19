@@ -50,7 +50,8 @@ export const containerStyles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 16,
     justifyContent: 'space-between',
-    height: '100%',
+    // height: '100%',
+    flex: 1,
     backgroundColor: '#fff',
   },
 });

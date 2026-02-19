@@ -6,7 +6,8 @@ import { containerStyles } from '@/src/constants/data';
 import { useInfo } from '@/src/context/InfoContext';
 import { useRouter } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-controller';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { formatPhoneNumberIntl } from 'react-phone-number-input';
 
 export default function Register() {
@@ -17,7 +18,10 @@ export default function Register() {
   const router = useRouter();
 
   return (
-    <SafeAreaProvider>
+    <KeyboardAwareScrollView
+      bottomOffset={30}
+      contentContainerStyle={{ flexGrow: 1 }}
+    >
       <SafeAreaView style={containerStyles.container}>
         <View>
           <Nav shouldGoBack={true} />
@@ -73,7 +77,7 @@ export default function Register() {
           </Text>
         </View>
       </SafeAreaView>
-    </SafeAreaProvider>
+    </KeyboardAwareScrollView>
   );
 }
 

@@ -4,12 +4,11 @@ import { StyleSheet, View } from 'react-native';
 import Tab from './Tab';
 
 export default function CategoryTab() {
-  const data = categories;
   const [selectedId, setSelectedId] = useState(0);
 
   return (
     <View style={styles.container}>
-      {data.map((datum, index) => (
+      {categories.map((datum, index) => (
         <Tab
           key={index}
           text={datum}
