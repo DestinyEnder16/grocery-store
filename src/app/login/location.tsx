@@ -53,7 +53,8 @@ export default function LocationScreen() {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
-    paddingVertical: 16,
+    paddingTop: 16,
+    paddingBottom: 32,
     justifyContent: 'space-between',
     height: '100%',
     backgroundColor: '#fff',

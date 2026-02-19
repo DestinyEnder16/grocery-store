@@ -1,47 +1,16 @@
 import BtnNav from '@/src/components/BtnNav';
 import ProgressBar from '@/src/components/ProgressBar';
-import { Dimensions, FlatList, StyleSheet, View } from 'react-native';
+import { Dimensions, FlatList, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { data } from '../../constants/data';
 
 import { useRef, useState } from 'react';
 
 // IMPORTANT SVG IMPORTS
 import Screen from '@/src/components/Screen';
-import { BoxSvg, RegisterSvg, TrolleySvg, TruckSvg } from '@/src/types';
-
-const styles = StyleSheet.create({
-  icon: { marginBottom: 28 },
-});
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 export default function Index() {
-  const data = [
-    {
-      index: 0,
-      headline: 'Welcome to Grocerya',
-      text: 'Get your grocery needs at your service within a minute. Fast, efficient, and convenient',
-      Img: <TrolleySvg style={styles.icon} />,
-    },
-    {
-      index: 1,
-      headline: 'Get any packages delivered',
-      text: 'Get all your items conveniently, ensuring everything you need arrives without any hassle.',
-      Img: <TruckSvg style={styles.icon} />,
-    },
-    {
-      index: 2,
-      Img: <BoxSvg style={styles.icon} />,
-      headline: 'Protected package delivery',
-      text: 'Your groceries are carefully packaged to ensure they arrive safely and in perfect condition',
-    },
-    {
-      index: 3,
-      Img: <RegisterSvg style={styles.icon} />,
-      headline: 'Best price guaranteed',
-      text: 'Allowing you to stock up on your favorite items while staying withing your budget',
-    },
-  ];
-
   const [activeIndex, setActiveIndex] = useState(0);
   const lastIndex = data.length - 1;
 
