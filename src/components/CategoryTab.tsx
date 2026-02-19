@@ -1,6 +1,6 @@
+import { categories } from '@/src/constants/data';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { categories } from '../types';
 import Tab from './Tab';
 
 export default function CategoryTab() {

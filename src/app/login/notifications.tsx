@@ -4,12 +4,13 @@ import Nav from '@/src/components/NavHelp';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
+import { containerStyles } from '@/src/constants/data';
 import { NotifSvg } from '@/src/types';
 
 export default function NavigationScreen() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={containerStyles.container}>
         <View>
           <Nav shouldGoBack={true} />
 
@@ -60,13 +61,6 @@ export default function NavigationScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    justifyContent: 'space-between',
-    height: '100%',
-    backgroundColor: '#fff',
-  },
   headline: {
     fontFamily: 'Poppins-Font-Semibold',
     fontSize: 20,

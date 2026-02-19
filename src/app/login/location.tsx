@@ -4,6 +4,7 @@ import Nav from '@/src/components/NavHelp';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
+import { containerStyles } from '@/src/constants/data';
 import { LocationSvg } from '@/src/types';
 import { useRouter } from 'expo-router';
 
@@ -11,7 +12,7 @@ export default function LocationScreen() {
   const router = useRouter();
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={containerStyles.container}>
         <Nav shouldGoBack={true} />
 
         <View

@@ -2,6 +2,7 @@ import Details from '@/src/components/Details';
 import LoginBtnNav from '@/src/components/LoginBtnNav';
 import Nav from '@/src/components/NavHelp';
 import NumInputField from '@/src/components/NumInputField';
+import { containerStyles } from '@/src/constants/data';
 import { useInfo } from '@/src/context/InfoContext';
 import { useRouter } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
@@ -17,7 +18,7 @@ export default function Register() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={containerStyles.container}>
         <View>
           <Nav shouldGoBack={true} />
           <Details
@@ -77,13 +78,6 @@ export default function Register() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    justifyContent: 'space-between',
-    height: '100%',
-    backgroundColor: '#fff',
-  },
   bold: {
     fontFamily: 'Poppins-Font-Semibold',
     color: '#000',

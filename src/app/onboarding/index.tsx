@@ -1,8 +1,8 @@
 import BtnNav from '@/src/components/BtnNav';
 import ProgressBar from '@/src/components/ProgressBar';
+import { data } from '@/src/constants/data';
 import { Dimensions, FlatList, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { data } from '../../constants/data';
 
 import { useRef, useState } from 'react';
 
@@ -36,9 +36,6 @@ export default function Index() {
     }
   };
 
-  // Add to your ScrollView:
-  // onMomentumScrollEnd={handleScroll}
-  // scrollEventThrottle={16}
   return (
     <SafeAreaProvider>
       <SafeAreaView

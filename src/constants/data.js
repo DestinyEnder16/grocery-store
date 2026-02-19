@@ -1,3 +1,4 @@
+import { StyleSheet } from 'react-native';
 import { BoxSvg, RegisterSvg, TrolleySvg, TruckSvg } from '../types';
 
 const styles = {
@@ -30,3 +31,26 @@ export const data = [
     text: 'Allowing you to stock up on your favorite items while staying withing your budget',
   },
 ];
+
+// data needed to display categories IMPORTANT
+export const categories = [
+  'Gluten-Free',
+  'Vegan Friendly',
+  'Raw Meat',
+  'Organic',
+  'Dairy-Free',
+  'Sugar-Free',
+  'Cruelty-Free',
+  'Processed Food',
+  'Show +22 More',
+];
+
+export const containerStyles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    justifyContent: 'space-between',
+    height: '100%',
+    backgroundColor: '#fff',
+  },
+});

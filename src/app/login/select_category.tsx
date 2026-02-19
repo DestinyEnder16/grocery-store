@@ -2,15 +2,16 @@ import CategoryTab from '@/src/components/CategoryTab';
 import Details from '@/src/components/Details';
 import LoginBtnNav from '@/src/components/LoginBtnNav';
 import Nav from '@/src/components/NavHelp';
+import { containerStyles } from '@/src/constants/data';
 import { useRouter } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Select_Category() {
   const router = useRouter();
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={containerStyles.container}>
         <View>
           <Nav shouldGoBack={true} />
 
@@ -30,13 +31,3 @@ export default function Select_Category() {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    justifyContent: 'space-between',
-    height: '100%',
-    backgroundColor: '#fff',
-  },
-});
