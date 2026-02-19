@@ -5,7 +5,7 @@ import Nav from '@/src/components/NavHelp';
 import PhoneNumberInput from '@/src/components/PhoneNumInput';
 import { useInfo } from '@/src/context/InfoContext';
 import { useRouter } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 export default function Index() {
   const router = useRouter();
@@ -33,13 +33,3 @@ export default function Index() {
     </AppKeyboardScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    justifyContent: 'space-between',
-    height: '100%',
-    backgroundColor: '#fff',
-  },
-});
