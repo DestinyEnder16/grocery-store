@@ -16,7 +16,6 @@ export default function ProgressBar({
     <View
       style={{
         flexDirection: 'row',
-        // justifyContent: 'space-around',
         paddingHorizontal: 20,
         gap: 8,
       }}

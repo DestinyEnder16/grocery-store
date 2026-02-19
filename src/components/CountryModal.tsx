@@ -15,7 +15,7 @@ export default function CountryModal({ fn, setShowModal }: modalProps) {
       <CountryPicker
         style={{
           modal: {
-            height: 212,
+            height: 500,
           },
           searchMessageText: {
             fontFamily: 'Poppins-Font',
