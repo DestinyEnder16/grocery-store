@@ -1,3 +1,12 @@
+import BoxSvg from '@/assets/icons/big_box.svg';
+import RegisterSvg from '@/assets/icons/cash_register.svg';
+import TruckSvg from '@/assets/icons/delivery_truck.svg';
+import TrolleySvg from '@/assets/icons/full_trolley.svg';
+import LocationSvg from '@/assets/icons/location-illustration.svg';
+import NotifSvg from '@/assets/icons/notif_illustration.svg';
+
+export { BoxSvg, LocationSvg, NotifSvg, RegisterSvg, TrolleySvg, TruckSvg };
+
 export const CountryCodeList = [
   'AF',
   'AL',
@@ -337,26 +346,3 @@ export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export const isCountryCode = (str: string): str is CountryCode => {
   return CountryCodeList.some((code) => code === str);
 };
-
-// data needed to display categories IMPORTANT
-export const categories = [
-  'Gluten-Free',
-  'Vegan Friendly',
-  'Raw Meat',
-  'Organic',
-  'Dairy-Free',
-  'Sugar-Free',
-  'Cruelty-Free',
-  'Processed Food',
-  'Show +22 More',
-];
-
-export const containerStyle = {
-  paddingHorizontal: 16,
-  paddingVertical: 16,
-  justifyContent: 'space-between',
-  height: '100%',
-  backgroundColor: '#fff',
-};
-
-export const Location = '../assets/icons/location-illustration.svg';

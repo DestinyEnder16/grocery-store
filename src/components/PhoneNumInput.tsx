@@ -1,8 +1,8 @@
+import CountryModal from '@/src/components/CountryModal';
+import { useInfo } from '@/src/context/InfoContext';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import PhoneInput from 'react-phone-number-input/react-native-input';
-import { useInfo } from '../context/InfoContext';
-import CountryModal from './CountryModal';
 
 export default function PhoneNumberInput() {
   const [showModal, setShowModal] = useState(false);
