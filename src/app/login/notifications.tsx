@@ -1,11 +1,11 @@
 import LoginBtnNav from '@/src/components/LoginBtnNav';
 import LoginInfoField from '@/src/components/LoginInfoField';
 import Nav from '@/src/components/NavHelp';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { containerStyles } from '@/src/constants/data';
 import { NotifSvg } from '@/src/types';
 import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function NotificationScreen() {
   const navigation = useNavigation<any>();
@@ -48,12 +48,12 @@ export default function NotificationScreen() {
           backgroundColor="#0D0D0D"
           text="Enable Notifications"
           color="white"
+          fn={() => navigation.navigate('HomeLayout')}
         />
         <LoginBtnNav
           backgroundColor="#F8F9FA"
           text="Skip For Now"
           color="black"
-          fn={() => navigation.navigate('Location')}
         />
       </View>
     </SafeAreaView>
