@@ -4,12 +4,12 @@ import LoginBtnNav from '@/src/components/LoginBtnNav';
 import Nav from '@/src/components/NavHelp';
 import PhoneNumberInput from '@/src/components/PhoneNumInput';
 import { useInfo } from '@/src/context/InfoContext';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { View } from 'react-native';
 
-export default function Index() {
-  const router = useRouter();
+export default function LoginIndex() {
   const { number } = useInfo();
+  const navigation = useNavigation<any>();
   return (
     <AppKeyboardScrollView>
       <View>
@@ -27,7 +27,7 @@ export default function Index() {
       <LoginBtnNav
         text="Continue"
         fn={() => {
-          number && router.navigate('/login/register');
+          number && navigation.navigate('Register');
         }}
       />
     </AppKeyboardScrollView>

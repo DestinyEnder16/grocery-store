@@ -1,4 +1,3 @@
-import BtnNav from '@/src/components/BtnNav';
 import ProgressBar from '@/src/components/ProgressBar';
 import { data } from '@/src/constants/data';
 import { Dimensions, FlatList, View } from 'react-native';
@@ -7,12 +6,15 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useRef, useState } from 'react';
 
 // IMPORTANT SVG IMPORTS
+import BtnNav from '@/src/components/BtnNav';
 import Screen from '@/src/components/Screen';
+import { useNavigation } from '@react-navigation/native';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-export default function Index() {
+export default function HomeIndex() {
   const [activeIndex, setActiveIndex] = useState(0);
   const lastIndex = data.length - 1;
+  const navigation = useNavigation<any>();
 
   const flatListRef = useRef<FlatList>(null);
 

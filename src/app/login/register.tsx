@@ -4,16 +4,16 @@ import LoginBtnNav from '@/src/components/LoginBtnNav';
 import Nav from '@/src/components/NavHelp';
 import NumInputField from '@/src/components/NumInputField';
 import { useInfo } from '@/src/context/InfoContext';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
 import { formatPhoneNumberIntl } from 'react-phone-number-input';
 
-export default function Register() {
+export default function RegisterScreen() {
   const { number } = useInfo();
+  const navigation = useNavigation<any>();
 
   // formatPhoneNumberIntl('+12133734253') === '+1 213 373 4253';
   const phoneNum = formatPhoneNumberIntl(number);
-  const router = useRouter();
 
   return (
     <AppKeyboardScrollView>
@@ -55,7 +55,7 @@ export default function Register() {
       <View style={{ gap: 10 }}>
         <LoginBtnNav
           text="Continue"
-          fn={() => router.navigate('/login/select_category')}
+          fn={() => navigation.navigate('Category')}
         />
         <Text
           style={{

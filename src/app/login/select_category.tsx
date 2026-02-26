@@ -3,12 +3,12 @@ import Details from '@/src/components/Details';
 import LoginBtnNav from '@/src/components/LoginBtnNav';
 import Nav from '@/src/components/NavHelp';
 import { containerStyles } from '@/src/constants/data';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Select_Category() {
-  const router = useRouter();
+  const navigation = useNavigation<any>();
   return (
     <SafeAreaView style={containerStyles.container}>
       <View>
@@ -22,10 +22,7 @@ export default function Select_Category() {
         </Details>
       </View>
 
-      <LoginBtnNav
-        text="Continue"
-        fn={() => router.navigate('/login/location')}
-      />
+      <LoginBtnNav text="Continue" fn={() => navigation.navigate('Location')} />
     </SafeAreaView>
   );
 }

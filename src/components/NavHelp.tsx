@@ -1,5 +1,5 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
@@ -8,7 +8,7 @@ interface navProps {
 }
 
 export default function Nav({ shouldGoBack = false }: navProps) {
-  const router = useRouter();
+  const navigation = useNavigation<any>();
   return (
     <View
       style={[
@@ -17,7 +17,7 @@ export default function Nav({ shouldGoBack = false }: navProps) {
       ]}
     >
       {shouldGoBack && (
-        <Pressable onPress={() => router.back()}>
+        <Pressable onPress={() => navigation.goBack()}>
           <Ionicons
             name="chevron-back-sharp"
             size={20}
