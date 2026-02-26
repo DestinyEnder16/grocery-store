@@ -5,8 +5,10 @@ import { useFonts } from '@expo-google-fonts/inter';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useAssets } from 'expo-asset';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import 'react-native-gesture-handler';
 import HomeLayout from './home/layout';
 import Layout from './login/layout';
 
@@ -47,16 +49,20 @@ export default function RootLayout() {
     ...Ionicons.font,
   });
 
+  const [complete, err] = useAssets([
+    require('@/assets/images/planet-pfp.jpg'),
+  ]);
+
   // SOLUTION: Using a splash screen
 
   useEffect(() => {
-    if (loaded || error) {
+    if (loaded || error || complete) {
       SplashScreen.hideAsync();
     }
-  }, [loaded, error]);
+  }, [loaded, error, complete]);
 
   // 3. Render nothing (keep splash screen up) while loading
-  if (!loaded && !error) {
+  if (!loaded && !error && !complete) {
     return null;
   }
 
