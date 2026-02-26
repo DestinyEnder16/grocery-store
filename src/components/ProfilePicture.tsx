@@ -1,15 +1,12 @@
-import { Image } from 'expo-image';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 export default function ProfilePicture() {
   return (
     <View style={styles.container}>
       <Image
-        source="@/assets/images/planet-pfp.jpg"
-        style={[styles.pfp]}
+        source={require('@/assets/images/planet-pfp.jpg')}
+        style={styles.pfp}
         // width={'100%'}
-        contentFit="cover"
-        transition={200} // Smooth fade-in so it doesn't "pop"
       />
     </View>
   );
