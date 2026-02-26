@@ -3,11 +3,12 @@ import LoginInfoField from '@/src/components/LoginInfoField';
 import Nav from '@/src/components/NavHelp';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
 import { containerStyles } from '@/src/constants/data';
 import { NotifSvg } from '@/src/types';
+import { useNavigation } from '@react-navigation/native';
 
-export default function NavigationScreen() {
+export default function NotificationScreen() {
+  const navigation = useNavigation<any>();
   return (
     <SafeAreaView style={containerStyles.container}>
       <View>
@@ -52,6 +53,7 @@ export default function NavigationScreen() {
           backgroundColor="#F8F9FA"
           text="Skip For Now"
           color="black"
+          fn={() => navigation.navigate('Location')}
         />
       </View>
     </SafeAreaView>

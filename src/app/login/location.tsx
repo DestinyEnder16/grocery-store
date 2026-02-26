@@ -5,10 +5,10 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import AppKeyboardScrollView from '@/src/components/AppKeyboardScrollView';
 import { LocationSvg } from '@/src/types';
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 
 export default function LocationScreen() {
-  const router = useRouter();
+  const navigation = useNavigation<any>();
   return (
     <AppKeyboardScrollView>
       <Nav shouldGoBack={true} />
@@ -36,7 +36,7 @@ export default function LocationScreen() {
           backgroundColor="#0D0D0D"
           text="Allow Google Maps"
           color="white"
-          fn={() => router.navigate('/login/notifications')}
+          fn={() => navigation.navigate('Notification')}
         />
         <LoginBtnNav
           backgroundColor="#F8F9FA"

@@ -1,13 +1,39 @@
-import { Stack } from 'expo-router';
 // NOTE: this is where the Global providers can be configured.
 
+import HomeIndex from '@/src/app/onboarding/index';
 import { useFonts } from '@expo-google-fonts/inter';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import Layout from './login/layout';
 
 // 1. Prevent the splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
+
+const Stack = createNativeStackNavigator();
+
+function RootStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+        statusBarStyle: 'dark',
+      }}
+    >
+      <Stack.Screen name="Home" component={HomeIndex} />
+      <Stack.Screen name="LoginLayout" component={Layout} />
+    </Stack.Navigator>
+  );
+}
+
+type RootStackType = typeof RootStack;
+
+declare module '@react-navigation/core' {
+  interface RootNavigator extends RootStackType {}
+}
 
 export default function RootLayout() {
   // IMPORTANT PROBLEM: Using of fonts is synchronous - we have to tell the app to wait until the fonts are loaded before displaying the main pages
@@ -33,13 +59,8 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-
-        statusBarStyle: 'dark',
-        // navigationBarHidden: true,
-      }}
-    />
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
   );
 }

@@ -1,8 +1,8 @@
-import { useRouter } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { Pressable, StyleSheet, Text } from 'react-native';
 
 export default function RedirectBtn() {
-  const router = useRouter();
+  const navigation = useNavigation<any>();
   return (
     <Pressable
       style={[
@@ -12,25 +12,15 @@ export default function RedirectBtn() {
           flex: 1,
         },
       ]}
-      onPress={() => router.navigate('/login')}
+      onPress={() => navigation.navigate('LoginLayout')}
     >
-      <Text
-        style={[
-          styles.txt,
-          {
-            color: '#fff',
-          },
-        ]}
-      >
-        Get Started
-      </Text>
+      <Text style={styles.txt}>Get Started</Text>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   btn: {
-    backgroundColor: '#F2F2F3',
     paddingVertical: 16,
     paddingHorizontal: 20,
     borderRadius: 100,
@@ -42,5 +32,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'Poppins-Font',
     fontWeight: '600',
+    color: 'white',
   },
 });
