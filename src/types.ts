@@ -1,11 +1,26 @@
+import Cart from '@/assets/icons/bag.svg';
 import BoxSvg from '@/assets/icons/big_box.svg';
 import RegisterSvg from '@/assets/icons/cash_register.svg';
 import TruckSvg from '@/assets/icons/delivery_truck.svg';
+import FavoriteSvg from '@/assets/icons/favorite.svg';
 import TrolleySvg from '@/assets/icons/full_trolley.svg';
+import Home from '@/assets/icons/Home.svg';
 import LocationSvg from '@/assets/icons/location-illustration.svg';
 import NotifSvg from '@/assets/icons/notif_illustration.svg';
+import UserSvg from '@/assets/icons/user.svg';
 
-export { BoxSvg, LocationSvg, NotifSvg, RegisterSvg, TrolleySvg, TruckSvg };
+export {
+  BoxSvg,
+  Cart,
+  FavoriteSvg,
+  Home,
+  LocationSvg,
+  NotifSvg,
+  RegisterSvg,
+  TrolleySvg,
+  TruckSvg,
+  UserSvg,
+};
 
 export const CountryCodeList = [
   'AF',

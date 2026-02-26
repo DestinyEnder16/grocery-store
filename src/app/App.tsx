@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import HomeLayout from './home/layout';
 import Layout from './login/layout';
 
 // 1. Prevent the splash screen from hiding automatically
@@ -17,7 +18,7 @@ const Stack = createNativeStackNavigator();
 function RootStack() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeLayout"
       screenOptions={{
         headerShown: false,
         statusBarStyle: 'dark',
@@ -25,6 +26,7 @@ function RootStack() {
     >
       <Stack.Screen name="Home" component={HomeIndex} />
       <Stack.Screen name="LoginLayout" component={Layout} />
+      <Stack.Screen name="HomeLayout" component={HomeLayout} />
     </Stack.Navigator>
   );
 }
