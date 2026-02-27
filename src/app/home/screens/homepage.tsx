@@ -1,10 +1,10 @@
-import { Text } from 'react-native';
+import ProfileDrawer from '@/src/components/Drawer';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Homepage() {
   return (
     <SafeAreaView>
-      <Text>Home</Text>
+      <ProfileDrawer />
     </SafeAreaView>
   );
 }

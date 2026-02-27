@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Cart, FavoriteSvg, Home, UserSvg } from '../types';
 
@@ -73,7 +73,7 @@ export default function MyTabBar({ state, descriptors, navigation }) {
           };
 
           return (
-            <TouchableOpacity
+            <Pressable
               key={route.key}
               // href={buildHref(route.name, route.params)}
               accessibilityState={isFocused ? { selected: true } : {}}
@@ -85,7 +85,7 @@ export default function MyTabBar({ state, descriptors, navigation }) {
             >
               <View>{icon}</View>
               {isFocused && <Text style={styles.tabTxt}>{label}</Text>}
-            </TouchableOpacity>
+            </Pressable>
           );
         })}
       </View>
