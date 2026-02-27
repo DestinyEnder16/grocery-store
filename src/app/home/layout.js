@@ -14,6 +14,8 @@ import FavoriteScreen from './screens/favorite';
 import Homepage from './screens/homepage';
 import ProfileScreen from './screens/profile';
 
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+
 const Tab = createBottomTabNavigator();
 
 const Drawer = createDrawerNavigator();
@@ -34,57 +36,71 @@ const ProfileScreenWithDrawer = () => {
   return (
     <Drawer.Navigator
       screenOptions={{ headerShown: false }}
-      drawerContent={(props) => (
-        <DrawerContentScrollView>
-          <View onPress={() => props.navigation.closeDrawer()}>
-            {/* <ProfilePicture /> */}
-            <ProfileDrawer
-              fn={() =>
+      drawerContent={(props) => {
+        // 1. Find the active tab name within MainTabs
+        const route = props.state.routes.find((r) => r.name === 'MainTabs');
+        const activeTab = getFocusedRouteNameFromRoute(route) ?? 'Home';
+
+        return (
+          <DrawerContentScrollView {...props}>
+            <View style={{ marginBottom: 20, paddingLeft: 20 }}>
+              <ProfileDrawer
+                fn={() =>
+                  props.navigation.navigate('MainTabs', { screen: 'Profile' })
+                }
+              />
+              <Text style={styles.h3}>Destiny</Text>
+            </View>
+
+            <DrawerItem
+              label="Home"
+              icon={({ color }) => <Home fill={color} />}
+              focused={activeTab === 'Home'} // 2. Manually set focus
+              activeTintColor="black"
+              inactiveTintColor="grey"
+              labelStyle={styles.txt}
+              onPress={() =>
+                props.navigation.navigate('MainTabs', { screen: 'Home' })
+              }
+            />
+
+            <DrawerItem
+              label="Cart"
+              icon={({ color }) => <Cart fill={color} />}
+              focused={activeTab === 'Cart'}
+              activeTintColor="black"
+              inactiveTintColor="grey"
+              labelStyle={styles.txt}
+              onPress={() =>
+                props.navigation.navigate('MainTabs', { screen: 'Cart' })
+              }
+            />
+
+            <DrawerItem
+              label="Favorite"
+              icon={() => <FavoriteSvg />}
+              activeTintColor="black"
+              focused={activeTab === 'Favorite'}
+              labelStyle={styles.txt}
+              onPress={() =>
+                props.navigation.navigate('MainTabs', { screen: 'Favorite' })
+              }
+            />
+            <DrawerItem
+              label="Profile"
+              icon={() => <UserSvg />}
+              activeTintColor="black"
+              focused={activeTab === 'Profile'}
+              labelStyle={styles.txt}
+              onPress={() =>
                 props.navigation.navigate('MainTabs', { screen: 'Profile' })
               }
             />
-            <Text style={styles.h3}>Destiny</Text>
-          </View>
 
-          <DrawerItem
-            label="Home"
-            icon={() => <Home />}
-            activeTintColor="black"
-            labelStyle={styles.txt}
-            onPress={() =>
-              props.navigation.navigate('MainTabs', { screen: 'Home' })
-            }
-          />
-
-          <DrawerItem
-            label="Cart"
-            icon={() => <Cart />}
-            activeTintColor="black"
-            labelStyle={styles.txt}
-            onPress={() =>
-              props.navigation.navigate('MainTabs', { screen: 'Cart' })
-            }
-          />
-          <DrawerItem
-            label="Favorite"
-            icon={() => <FavoriteSvg />}
-            activeTintColor="black"
-            labelStyle={styles.txt}
-            onPress={() =>
-              props.navigation.navigate('MainTabs', { screen: 'Favorite' })
-            }
-          />
-          <DrawerItem
-            label="Profile"
-            icon={() => <UserSvg />}
-            activeTintColor="black"
-            labelStyle={styles.txt}
-            onPress={() =>
-              props.navigation.navigate('MainTabs', { screen: 'Profile' })
-            }
-          />
-        </DrawerContentScrollView>
-      )}
+            {/* Repeat focused={activeTab === 'Name'} for Favorite and Profile */}
+          </DrawerContentScrollView>
+        );
+      }}
     >
       <Drawer.Screen name="MainTabs" component={RootTabs} />
     </Drawer.Navigator>
