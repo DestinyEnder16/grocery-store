@@ -12,6 +12,6 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "src/app/home/layout.tsx",
-    "src/components/TabNav.js"
+    "src/components/TabNav.tsx"
   ]
 }

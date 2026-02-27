@@ -1,5 +1,4 @@
 import ProfileDrawer from '@/src/components/Drawer';
-import MyTabBar from '@/src/components/TabNav';
 import { Cart, FavoriteSvg, Home, UserSvg } from '@/src/types';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -9,6 +8,7 @@ import {
 } from '@react-navigation/drawer';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import MyTabBar from '../../components/TabNav';
 import CartScreen from './screens/cart';
 import FavoriteScreen from './screens/favorite';
 import Homepage from './screens/homepage';
@@ -22,7 +22,7 @@ const Drawer = createDrawerNavigator();
 
 const styles = StyleSheet.create({
   txt: {
-    fontFamily: 'Poppins-Font',
+    fontFamily: 'Poppins-Font-Semibold',
     // color: 'grey',
     fontSize: 18,
   },
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Font-Semibold',
     fontSize: 24,
   },
+  drawerTab: { marginVertical: 10 },
 });
 
 const ProfileScreenWithDrawer = () => {
@@ -39,7 +40,9 @@ const ProfileScreenWithDrawer = () => {
       drawerContent={(props) => {
         // 1. Find the active tab name within MainTabs
         const route = props.state.routes.find((r) => r.name === 'MainTabs');
-        const activeTab = getFocusedRouteNameFromRoute(route) ?? 'Home';
+        const activeTab = route
+          ? getFocusedRouteNameFromRoute(route) ?? 'Home'
+          : 'Home';
 
         return (
           <DrawerContentScrollView {...props}>
@@ -54,11 +57,14 @@ const ProfileScreenWithDrawer = () => {
 
             <DrawerItem
               label="Home"
-              icon={({ color }) => <Home fill={color} />}
+              icon={({ color }) => (
+                <Home color={activeTab === 'Home' ? '#000' : 'grey'} />
+              )}
               focused={activeTab === 'Home'} // 2. Manually set focus
               activeTintColor="black"
               inactiveTintColor="grey"
               labelStyle={styles.txt}
+              style={styles.drawerTab}
               onPress={() =>
                 props.navigation.navigate('MainTabs', { screen: 'Home' })
               }
@@ -66,8 +72,11 @@ const ProfileScreenWithDrawer = () => {
 
             <DrawerItem
               label="Cart"
-              icon={({ color }) => <Cart fill={color} />}
+              icon={({ color }) => (
+                <Cart color={activeTab === 'Cart' ? '#000' : 'grey'} />
+              )}
               focused={activeTab === 'Cart'}
+              style={styles.drawerTab}
               activeTintColor="black"
               inactiveTintColor="grey"
               labelStyle={styles.txt}
@@ -78,8 +87,14 @@ const ProfileScreenWithDrawer = () => {
 
             <DrawerItem
               label="Favorite"
-              icon={() => <FavoriteSvg />}
+              icon={() => (
+                <FavoriteSvg
+                  color={activeTab === 'Favorite' ? '#000' : 'grey'}
+                />
+              )}
               activeTintColor="black"
+              inactiveTintColor="grey"
+              style={styles.drawerTab}
               focused={activeTab === 'Favorite'}
               labelStyle={styles.txt}
               onPress={() =>
@@ -88,8 +103,11 @@ const ProfileScreenWithDrawer = () => {
             />
             <DrawerItem
               label="Profile"
-              icon={() => <UserSvg />}
+              icon={() => (
+                <UserSvg color={activeTab === 'Profile' ? '#000' : 'grey'} />
+              )}
               activeTintColor="black"
+              style={styles.drawerTab}
               focused={activeTab === 'Profile'}
               labelStyle={styles.txt}
               onPress={() =>

@@ -7,6 +7,7 @@ export default function ProfilePicture() {
       <Image
         source={require('@/assets/images/planet-pfp.jpg')}
         style={styles.pfp}
+        cachePolicy={'memory-disk'}
         // width={'100%'}
       />
     </View>
