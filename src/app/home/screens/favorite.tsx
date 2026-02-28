@@ -1,11 +1,10 @@
-import ProfileDrawer from '@/src/components/Drawer';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import ProfileDrawer from '@/src/components/ProfileDrawer';
+import ScreenView from '@/src/components/ScreenView';
 
 export default function FavoriteScreen() {
   return (
-    <SafeAreaView>
-      {/* <Text>View</Text> */}
+    <ScreenView headline="Favorite Screen">
       <ProfileDrawer />
-    </SafeAreaView>
+    </ScreenView>
   );
 }

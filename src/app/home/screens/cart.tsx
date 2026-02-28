@@ -1,10 +1,10 @@
-import ProfileDrawer from '@/src/components/Drawer';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import ProfileDrawer from '@/src/components/ProfileDrawer';
+import ScreenView from '@/src/components/ScreenView';
 
 export default function CartScreen() {
   return (
-    <SafeAreaView>
+    <ScreenView headline="Cart Screen">
       <ProfileDrawer />
-    </SafeAreaView>
+    </ScreenView>
   );
 }
