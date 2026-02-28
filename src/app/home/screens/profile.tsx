@@ -1,10 +1,10 @@
-import ProfileDrawer from '@/src/components/Drawer';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import ProfileDrawer from '@/src/components/ProfileDrawer';
+import ScreenView from '@/src/components/ScreenView';
 
 export default function ProfileScreen() {
   return (
-    <SafeAreaView>
+    <ScreenView headline="Profile">
       <ProfileDrawer />
-    </SafeAreaView>
+    </ScreenView>
   );
 }

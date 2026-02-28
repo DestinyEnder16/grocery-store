@@ -1,4 +1,4 @@
-import ProfileDrawer from '@/src/components/Drawer';
+import ProfileDrawer from '@/src/components/ProfileDrawer';
 import { Cart, FavoriteSvg, Home, UserSvg } from '@/src/types';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -34,9 +34,11 @@ const styles = StyleSheet.create({
 });
 
 const ProfileScreenWithDrawer = () => {
+  const activeColor = 'blue';
+  const inactiveColor = 'grey';
   return (
     <Drawer.Navigator
-      screenOptions={{ headerShown: false }}
+      screenOptions={{ headerShown: false, drawerActiveTintColor: activeColor }}
       drawerContent={(props) => {
         // 1. Find the active tab name within MainTabs
         const route = props.state.routes.find((r) => r.name === 'MainTabs');
@@ -51,6 +53,8 @@ const ProfileScreenWithDrawer = () => {
                 fn={() =>
                   props.navigation.navigate('MainTabs', { screen: 'Profile' })
                 }
+                height={100}
+                width={100}
               />
               <Text style={styles.h3}>Destiny</Text>
             </View>
@@ -58,10 +62,11 @@ const ProfileScreenWithDrawer = () => {
             <DrawerItem
               label="Home"
               icon={({ color }) => (
-                <Home color={activeTab === 'Home' ? '#000' : 'grey'} />
+                <Home
+                  color={activeTab === 'Home' ? activeColor : inactiveColor}
+                />
               )}
               focused={activeTab === 'Home'} // 2. Manually set focus
-              activeTintColor="black"
               inactiveTintColor="grey"
               labelStyle={styles.txt}
               style={styles.drawerTab}
@@ -73,11 +78,12 @@ const ProfileScreenWithDrawer = () => {
             <DrawerItem
               label="Cart"
               icon={({ color }) => (
-                <Cart color={activeTab === 'Cart' ? '#000' : 'grey'} />
+                <Cart
+                  color={activeTab === 'Cart' ? activeColor : inactiveColor}
+                />
               )}
               focused={activeTab === 'Cart'}
               style={styles.drawerTab}
-              activeTintColor="black"
               inactiveTintColor="grey"
               labelStyle={styles.txt}
               onPress={() =>
@@ -89,10 +95,9 @@ const ProfileScreenWithDrawer = () => {
               label="Favorite"
               icon={() => (
                 <FavoriteSvg
-                  color={activeTab === 'Favorite' ? '#000' : 'grey'}
+                  color={activeTab === 'Favorite' ? activeColor : inactiveColor}
                 />
               )}
-              activeTintColor="black"
               inactiveTintColor="grey"
               style={styles.drawerTab}
               focused={activeTab === 'Favorite'}
@@ -104,9 +109,10 @@ const ProfileScreenWithDrawer = () => {
             <DrawerItem
               label="Profile"
               icon={() => (
-                <UserSvg color={activeTab === 'Profile' ? '#000' : 'grey'} />
+                <UserSvg
+                  color={activeTab === 'Profile' ? activeColor : inactiveColor}
+                />
               )}
-              activeTintColor="black"
               style={styles.drawerTab}
               focused={activeTab === 'Profile'}
               labelStyle={styles.txt}
