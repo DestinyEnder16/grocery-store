@@ -1,6 +1,5 @@
 // NOTE: this is where the Global providers can be configured.
 
-import HomeIndex from '@/src/app/onboarding/index';
 import { useFonts } from '@expo-google-fonts/inter';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,10 +11,41 @@ import 'react-native-gesture-handler';
 import HomeLayout from './home/layout';
 import Layout from './login/layout';
 
+import Onboarding from '@/src/app/onboarding/index';
+import * as Linking from 'expo-linking';
+import { Text } from 'react-native';
+import { UserProvider } from '../context/UserContext';
+
 // 1. Prevent the splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
+
+const linking = {
+  prefixes: ['grocerystore://', Linking.createURL('/')],
+  config: {
+    screens: {
+      HomeLayout: {
+        screens: {
+          MainTabs: {
+            screens: {
+              Home: 'home',
+              Profile: {
+                path: 'user/:id?',
+
+                // NOTE: The path is the primary pattern that will be used to generate the URL. The patterns in alias will be ignored when generating URLs.
+                alias: ['profile/:id'],
+              },
+              Cart: 'cart',
+              Favorite: 'favorite',
+            },
+          },
+        },
+      },
+      Home: 'login',
+    },
+  },
+};
 
 function RootStack() {
   return (
@@ -26,7 +56,7 @@ function RootStack() {
         statusBarStyle: 'dark',
       }}
     >
-      <Stack.Screen name="Home" component={HomeIndex} />
+      <Stack.Screen name="Home" component={Onboarding} />
       <Stack.Screen name="LoginLayout" component={Layout} />
       <Stack.Screen name="HomeLayout" component={HomeLayout} />
     </Stack.Navigator>
@@ -42,7 +72,7 @@ declare module '@react-navigation/core' {
 export default function RootLayout() {
   // IMPORTANT PROBLEM: Using of fonts is synchronous - we have to tell the app to wait until the fonts are loaded before displaying the main pages
   const [loaded, error] = useFonts({
-    // NOTE: The fonts are loaded in the _layout.tsx file so that it can be accessible by all components easily
+    // NOTE: The fonts are loaded in the root file so that it can be accessible by all components easily
     'Poppins-Font': require('@/assets/fonts/Poppins.ttf'),
     'Poppins-Font-Bold': require('@/assets/fonts/Poppins-Bold.ttf'),
     'Poppins-Font-Semibold': require('@/assets/fonts/Poppins-SemiBold.ttf'),
@@ -67,8 +97,13 @@ export default function RootLayout() {
   }
 
   return (
-    <NavigationContainer>
-      <RootStack />
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer
+        linking={linking as any}
+        fallback={<Text>Invalid URL</Text>}
+      >
+        <RootStack />
+      </NavigationContainer>
+    </UserProvider>
   );
 }

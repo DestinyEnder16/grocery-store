@@ -14,6 +14,7 @@ import FavoriteScreen from './screens/favorite';
 import Homepage from './screens/homepage';
 import ProfileScreen from './screens/profile';
 
+import { useUser } from '@/src/context/UserContext';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
@@ -36,6 +37,10 @@ const styles = StyleSheet.create({
 const ProfileScreenWithDrawer = () => {
   const activeColor = 'blue';
   const inactiveColor = 'grey';
+
+  // getting name from the UserContext
+  const { userId } = useUser();
+
   return (
     <Drawer.Navigator
       screenOptions={{ headerShown: false, drawerActiveTintColor: activeColor }}
@@ -56,7 +61,7 @@ const ProfileScreenWithDrawer = () => {
                 height={100}
                 width={100}
               />
-              <Text style={styles.h3}>Destiny</Text>
+              <Text style={styles.h3}>{userId}</Text>
             </View>
 
             <DrawerItem
@@ -126,6 +131,7 @@ const ProfileScreenWithDrawer = () => {
         );
       }}
     >
+      {/* IMPORTANT NOTE: The tabs are contained within the drawer. When handling deep linking, we first need to navigate to this MainTabs before moving on to the different screens. */}
       <Drawer.Screen name="MainTabs" component={RootTabs} />
     </Drawer.Navigator>
   );
@@ -145,7 +151,7 @@ function RootTabs() {
       <Tab.Screen name="Home" component={Homepage} />
       <Tab.Screen name="Cart" component={CartScreen} />
       <Tab.Screen name="Favorite" component={FavoriteScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen as any} />
     </Tab.Navigator>
   );
 }

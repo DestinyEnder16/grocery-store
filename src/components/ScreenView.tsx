@@ -11,6 +11,8 @@ export default function ScreenView({ children, headline }: screenProp) {
     container: {
       height: '100%',
       justifyContent: 'space-between',
+      paddingTop: 10,
+      paddingHorizontal: 20,
     },
     view: {
       alignSelf: 'center',
