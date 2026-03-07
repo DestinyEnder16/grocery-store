@@ -42,7 +42,7 @@ const linking = {
           },
         },
       },
-      Home: 'login',
+      Onboarding: 'login',
     },
   },
 };
@@ -50,13 +50,13 @@ const linking = {
 function RootStack() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Onboarding"
       screenOptions={{
         headerShown: false,
         statusBarStyle: 'dark',
       }}
     >
-      <Stack.Screen name="Home" component={Onboarding} />
+      <Stack.Screen name="Onboarding" component={Onboarding} />
       <Stack.Screen name="LoginLayout" component={Layout} />
       <Stack.Screen name="HomeLayout" component={HomeLayout} />
     </Stack.Navigator>
