@@ -13,7 +13,7 @@ import Layout from './login/layout';
 
 import Onboarding from '@/src/app/onboarding/index';
 import * as Linking from 'expo-linking';
-import { Text } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import { UserProvider } from '../context/UserContext';
 
 // 1. Prevent the splash screen from hiding automatically
@@ -31,7 +31,8 @@ const linking = {
             screens: {
               Home: 'home',
               Profile: {
-                path: 'user/:id?',
+                path: 'user/:id?/:email?',
+                // path: 'user',
 
                 // NOTE: The path is the primary pattern that will be used to generate the URL. The patterns in alias will be ignored when generating URLs.
                 alias: ['profile/:id'],
@@ -100,7 +101,7 @@ export default function RootLayout() {
     <UserProvider>
       <NavigationContainer
         linking={linking as any}
-        fallback={<Text>Invalid URL</Text>}
+        fallback={<ActivityIndicator />}
       >
         <RootStack />
       </NavigationContainer>

@@ -29,14 +29,22 @@ import { createContext, useContext, useState } from 'react';
 type UserContextType = {
   userId: string | null;
   setUserId: (id: string) => void;
+  userEmail: string | null;
+  setUserEmail: (email: string) => void;
 };
 
 const UserContext = createContext<UserContextType | null>(null);
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
-  const [userId, setUserId] = useState<string | null>(null);
+  const [userId, setUserId] = useState<string | null>('John Doe');
+  const [userEmail, setUserEmail] = useState<string | null>(
+    'johndoe@gmail.com'
+  );
+
   return (
-    <UserContext.Provider value={{ userId, setUserId }}>
+    <UserContext.Provider
+      value={{ userId, setUserId, userEmail, setUserEmail }}
+    >
       {children}
     </UserContext.Provider>
   );

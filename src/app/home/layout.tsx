@@ -28,8 +28,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   h3: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: 'Poppins-Font-Bold',
     fontSize: 24,
+  },
+  h5: {
+    fontFamily: 'Poppins-Font-Semibold',
+    fontSize: 12,
+    color: 'grey',
   },
   drawerTab: { marginVertical: 10 },
 });
@@ -39,7 +44,7 @@ const ProfileScreenWithDrawer = () => {
   const inactiveColor = 'grey';
 
   // getting name from the UserContext
-  const { userId } = useUser();
+  const { userId, userEmail } = useUser();
 
   return (
     <Drawer.Navigator
@@ -62,6 +67,7 @@ const ProfileScreenWithDrawer = () => {
                 width={100}
               />
               <Text style={styles.h3}>{userId}</Text>
+              <Text style={styles.h5}>{userEmail}</Text>
             </View>
 
             <DrawerItem

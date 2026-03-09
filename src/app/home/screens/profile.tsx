@@ -5,21 +5,24 @@ import { RouteProp, useRoute } from '@react-navigation/native';
 import { useEffect } from 'react';
 
 type ProfileRouteParams = {
-  Profile: { id?: string };
+  Profile: { id?: string; email?: string };
 };
 
 export default function ProfileScreen({ Profile }: ProfileRouteParams) {
   const route = useRoute<RouteProp<ProfileRouteParams, 'Profile'>>();
-  const { setUserId, userId } = useUser();
+  const { setUserId, userId, setUserEmail } = useUser();
 
   // IMPORTANT: When navigating to Profile from another screen, do not use route.params
-  const { id } = route.params ?? {};
+  const { id, email } = route.params ?? {};
+  console.log(id, email);
 
   useEffect(() => {
-    if (id !== undefined) {
+    console.log(route);
+    if (id !== undefined && email !== undefined) {
       setUserId(id);
+      setUserEmail(email);
     }
-  }, [id, setUserId]);
+  }, [id, setUserId, setUserEmail, email, route]);
 
   // const params = route.params;
   return (
