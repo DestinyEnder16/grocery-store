@@ -1,7 +1,7 @@
 import LoginBtnNav from '@/src/components/LoginBtnNav';
 import LoginInfoField from '@/src/components/LoginInfoField';
 import Nav from '@/src/components/NavHelp';
-import { containerStyles } from '@/src/constants/data';
+import { containerStyles, Fonts } from '@/src/constants/data';
 import { NotifSvg } from '@/src/types';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
@@ -62,11 +62,11 @@ export default function NotificationScreen() {
 
 const styles = StyleSheet.create({
   headline: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     fontSize: 20,
   },
   txt: {
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
     textAlign: 'center',
     lineHeight: 30,
     color: '#777777',

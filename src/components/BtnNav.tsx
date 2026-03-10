@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import RedirectBtn from './RedirectBtn';
 
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
 
   txt: {
     textAlign: 'center',
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
     fontWeight: '600',
   },
 });

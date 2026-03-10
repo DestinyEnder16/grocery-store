@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     gap: 8,
     borderRadius: 10,
   },
-  tabTxt: { color: 'black', fontFamily: 'Poppins-Font-Semibold' },
+  tabTxt: { color: 'black', fontFamily: Fonts.semibold },
 });
 
 export default function MyTabBar({

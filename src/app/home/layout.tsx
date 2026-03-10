@@ -14,6 +14,7 @@ import FavoriteScreen from './screens/favorite';
 import Homepage from './screens/homepage';
 import ProfileScreen from './screens/profile';
 
+import { Fonts } from '@/src/constants/data';
 import { useUser } from '@/src/context/UserContext';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
@@ -23,16 +24,16 @@ const Drawer = createDrawerNavigator();
 
 const styles = StyleSheet.create({
   txt: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     // color: 'grey',
     fontSize: 18,
   },
   h3: {
-    fontFamily: 'Poppins-Font-Bold',
+    fontFamily: Fonts.bold,
     fontSize: 24,
   },
   h5: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     fontSize: 12,
     color: 'grey',
   },

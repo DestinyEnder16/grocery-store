@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -20,7 +21,7 @@ export default function ScreenView({ children, headline }: screenProp) {
       justifyContent: 'center',
     },
     pagetxt: {
-      fontFamily: 'Poppins-Font',
+      fontFamily: Fonts.regular,
       fontSize: 24,
     },
   });

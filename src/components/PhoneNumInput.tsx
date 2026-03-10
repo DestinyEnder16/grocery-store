@@ -1,4 +1,5 @@
 import CountryModal from '@/src/components/CountryModal';
+import { Fonts } from '@/src/constants/data';
 import { useInfo } from '@/src/context/InfoContext';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
@@ -59,13 +60,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   dial_code: {
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
   },
   inputField: {
     backgroundColor: '#F2F2F3',
     borderRadius: 8,
     height: 52,
     padding: 10,
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
   },
 });

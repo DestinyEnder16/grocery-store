@@ -4,6 +4,7 @@ import Nav from '@/src/components/NavHelp';
 import { StyleSheet, Text, View } from 'react-native';
 
 import AppKeyboardScrollView from '@/src/components/AppKeyboardScrollView';
+import { Fonts } from '@/src/constants/data';
 import { LocationSvg } from '@/src/types';
 import { useNavigation } from '@react-navigation/native';
 
@@ -58,11 +59,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   headline: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     fontSize: 20,
   },
   txt: {
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
     textAlign: 'center',
     lineHeight: 30,
     color: '#777777',

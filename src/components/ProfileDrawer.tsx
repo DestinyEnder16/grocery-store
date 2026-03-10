@@ -3,7 +3,7 @@ import { Pressable } from 'react-native';
 import ProfilePicture from './ProfilePicture';
 
 interface profileProps {
-  fn?: any;
+  fn?: () => void;
   height?: number;
   width?: number;
 }

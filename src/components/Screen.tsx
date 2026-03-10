@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
 interface screenProps {
@@ -34,13 +35,13 @@ const styles = StyleSheet.create({
   headline: {
     fontSize: 20,
     fontWeight: '600',
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     marginBottom: 8,
   },
   text: {
     color: 'gray',
     fontSize: 16,
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
     textAlign: 'center',
     lineHeight: 28,
   },
