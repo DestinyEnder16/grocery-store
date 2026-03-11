@@ -2,7 +2,7 @@
 
 import { useFonts } from '@expo-google-fonts/inter';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, LinkingOptions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useAssets } from 'expo-asset';
 import * as SplashScreen from 'expo-splash-screen';
@@ -21,7 +21,7 @@ SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
-const linking = {
+const linking: LinkingOptions<ReactNavigation.RootParamList> = {
   prefixes: ['grocerystore://', Linking.createURL('/')],
   config: {
     screens: {
@@ -99,10 +99,7 @@ export default function RootLayout() {
 
   return (
     <UserProvider>
-      <NavigationContainer
-        linking={linking as any}
-        fallback={<ActivityIndicator />}
-      >
+      <NavigationContainer linking={linking} fallback={<ActivityIndicator />}>
         <RootStack />
       </NavigationContainer>
     </UserProvider>
