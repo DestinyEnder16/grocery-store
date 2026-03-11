@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -34,17 +35,17 @@ export default function Details({
 
 export const styles = StyleSheet.create({
   heading: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     fontSize: 20,
   },
   txt: {
     fontSize: 16,
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
     color: '#777777',
     marginTop: 10,
   },
   extra_txt: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     fontSize: 14,
   },
 });

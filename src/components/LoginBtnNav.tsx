@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 interface btnProps {
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   },
   txt: {
     color: '#fff',
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     textAlign: 'center',
   },
 });

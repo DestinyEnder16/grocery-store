@@ -11,7 +11,7 @@ import Screen from '@/src/components/Screen';
 import { useNavigation } from '@react-navigation/native';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-export default function HomeIndex() {
+export default function Onboarding() {
   const [activeIndex, setActiveIndex] = useState(0);
   const lastIndex = data.length - 1;
   const navigation = useNavigation<any>();

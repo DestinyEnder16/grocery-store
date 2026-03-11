@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { StyleSheet, TextInput } from 'react-native';
 
 export default function NumInputField() {
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     height: 71,
     width: 70,
     borderRadius: 10,
-    fontFamily: 'Poppins-Font-Bold',
+    fontFamily: Fonts.bold,
     fontSize: 20,
     color: '#0D0D0D',
   },

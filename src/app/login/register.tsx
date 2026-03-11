@@ -3,6 +3,7 @@ import Details from '@/src/components/Details';
 import LoginBtnNav from '@/src/components/LoginBtnNav';
 import Nav from '@/src/components/NavHelp';
 import NumInputField from '@/src/components/NumInputField';
+import { Fonts } from '@/src/constants/data';
 import { useInfo } from '@/src/context/InfoContext';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
@@ -27,7 +28,7 @@ export default function RegisterScreen() {
               <View>
                 <Text
                   style={{
-                    fontFamily: 'Poppins-Font-Semibold',
+                    fontFamily: Fonts.semibold,
                     marginTop: 5,
                     fontSize: 16,
                     color: '#0D0D0D',
@@ -59,7 +60,7 @@ export default function RegisterScreen() {
         />
         <Text
           style={{
-            fontFamily: 'Poppins-Font',
+            fontFamily: Fonts.regular,
             color: '#777',
             textAlign: 'center',
             fontSize: 12,
@@ -76,11 +77,11 @@ export default function RegisterScreen() {
 
 const styles = StyleSheet.create({
   bold: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     color: '#000',
   },
   phoneNum: {
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     fontSize: 16,
   },
 });

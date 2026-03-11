@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 interface tabProps {
@@ -34,7 +35,7 @@ export default function Tab({
 const styles = StyleSheet.create({
   category: {
     backgroundColor: '#F8F9FA',
-    fontFamily: 'Poppins-Font-Semibold',
+    fontFamily: Fonts.semibold,
     borderRadius: 100,
     paddingVertical: 6,
     paddingHorizontal: 20,

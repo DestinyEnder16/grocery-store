@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { useNavigation } from '@react-navigation/native';
 import { Pressable, StyleSheet, Text } from 'react-native';
 
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
 
   txt: {
     textAlign: 'center',
-    fontFamily: 'Poppins-Font',
+    fontFamily: Fonts.regular,
     fontWeight: '600',
     color: 'white',
   },

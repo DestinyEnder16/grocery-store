@@ -1,3 +1,5 @@
+import { Fonts } from '@/src/constants/data';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Cart, FavoriteSvg, Home, UserSvg } from '../types';
@@ -16,10 +18,14 @@ const styles = StyleSheet.create({
     gap: 8,
     borderRadius: 10,
   },
-  tabTxt: { color: 'black', fontFamily: 'Poppins-Font-Semibold' },
+  tabTxt: { color: 'black', fontFamily: Fonts.semibold },
 });
 
-export default function MyTabBar({ state, descriptors, navigation }) {
+export default function MyTabBar({
+  state,
+  descriptors,
+  navigation,
+}: BottomTabBarProps) {
   // const { colors } = useTheme();
   // const { buildHref } = useLinkBuilder();
 
@@ -30,28 +36,29 @@ export default function MyTabBar({ state, descriptors, navigation }) {
           const { options } = descriptors[route.key];
           let icon; // Use let so it can be reassigned
 
+          const isFocused = state.index === index;
+
           switch (route.name) {
             case 'Home':
-              icon = <Home />;
+              icon = <Home color={isFocused ? '#000' : 'grey'} />;
               break;
             case 'Cart':
-              icon = <Cart />;
+              icon = <Cart color={isFocused ? '#000' : 'grey'} />;
               break;
             case 'Favorite':
-              icon = <FavoriteSvg />;
+              icon = <FavoriteSvg color={isFocused ? '#000' : 'grey'} />;
               break;
             case 'Profile':
-              icon = <UserSvg />;
+              icon = <UserSvg color={isFocused ? '#000' : 'grey'} />;
               break;
           }
+
           const label =
-            options.tabBarLabel !== undefined
+            typeof options.tabBarLabel === 'string'
               ? options.tabBarLabel
-              : options.title !== undefined
+              : typeof options.title === 'string'
               ? options.title
               : route.name;
-
-          const isFocused = state.index === index;
 
           const onPress = () => {
             const event = navigation.emit({

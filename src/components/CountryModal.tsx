@@ -1,3 +1,4 @@
+import { Fonts } from '@/src/constants/data';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { CountryPicker } from 'react-native-country-codes-picker';
@@ -18,7 +19,7 @@ export default function CountryModal({ fn, setShowModal }: modalProps) {
             height: 500,
           },
           searchMessageText: {
-            fontFamily: 'Poppins-Font',
+            fontFamily: Fonts.regular,
           },
           dialCode: {
             display: 'none',

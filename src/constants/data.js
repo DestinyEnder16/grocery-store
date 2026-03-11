@@ -45,6 +45,14 @@ export const categories = [
   'Show +22 More',
 ];
 
+// IMPORTANT: FONTS
+
+export const Fonts = {
+  regular: 'Poppins-Font',
+  bold: 'Poppins-Font-Bold',
+  semibold: 'Poppins-Font-Semibold',
+};
+
 export const containerStyles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
