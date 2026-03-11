@@ -14,12 +14,13 @@ export default function ProfileScreen({ Profile }: ProfileRouteParams) {
 
   // IMPORTANT: When navigating to Profile from another screen, do not use route.params
   const { id, email } = route.params ?? {};
-  console.log(id, email);
 
   useEffect(() => {
     console.log(route);
-    if (id !== undefined && email !== undefined) {
+    if (id !== undefined) {
       setUserId(id);
+    }
+    if (email !== undefined) {
       setUserEmail(email);
     }
   }, [id, setUserId, setUserEmail, email, route]);
